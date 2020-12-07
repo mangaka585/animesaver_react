@@ -224,3 +224,43 @@ export const postFeedback = (firstname, lastname, tel, email) => (dispatch) => {
   //.then(response => dispatch(getFeedback(response)))
   .catch(error =>  { console.log('post feedback', error.message); alert('Your feedback could not be posted\nError: '+error.message); });
 };
+
+
+
+
+export const fetchAnimelist = () => (dispatch) => {
+
+  dispatch(animelistLoading(true));
+
+  return fetch(baseUrl + 'animelist')
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          var errmess = new Error(error.message);
+          throw errmess;
+  })
+  .then(response => response.json())
+  .then(animelist => dispatch(addAnimelist(animelist)))
+  .catch(error => dispatch(animelistFailed(error.message)));
+}
+
+export const animelistLoading = () => ({
+  type: ActionTypes.ANIMELIST_LOADING
+});
+
+export const animelistFailed = (errmess) => ({
+  type: ActionTypes.ANIMELIST_FAILED,
+  payload: errmess
+});
+
+export const addAnimelist = (animelist) => ({
+  type: ActionTypes.ADD_ANIMELIST,
+  payload: animelist
+});

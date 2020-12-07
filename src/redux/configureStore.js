@@ -6,6 +6,7 @@ import { Dishes } from './dishes';
 import { Comments } from './comments';
 import { Promotions } from './promotions';
 import { Leaders } from './leaders';
+import { Animelist } from './animelist';
 import { InitialFeedback } from './forms';
 
 export const ConfigureStore = () => {
@@ -15,6 +16,7 @@ export const ConfigureStore = () => {
             comments: Comments,
             promotions: Promotions,
             leaders: Leaders,
+            animelist: Animelist,
             ...createForms({
                 feedback: InitialFeedback
             })

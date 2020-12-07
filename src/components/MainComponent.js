@@ -5,14 +5,15 @@ import { actions } from 'react-redux-form';
 import Header from './Header/HeaderComponent';
 import Footer from './Footer/FooterComponent';
 import Home from './Home/HomeComponent.js';
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback } from '../redux/ActionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback, fetchAnimelist } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return {
         dishes: state.dishes,
         comments: state.comments,
         leaders: state.leaders,
-        promotions: state.promotions
+        promotions: state.promotions,
+        animelist: state.animelist
     }
 }
 
@@ -21,6 +22,7 @@ const mapDispatchToProps = dispatch => ({
     fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos()),
     fetchLeaders: () => dispatch(fetchLeaders()),
+    fetchAnimelist: () => { dispatch(fetchAnimelist())},
     postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
     postFeedback: (firstname, lastname, tel, email) => dispatch(postFeedback(firstname, lastname, tel, email))
 });
@@ -36,6 +38,7 @@ class Main extends Component {
         this.props.fetchComments();
         this.props.fetchPromos();
         this.props.fetchLeaders();
+        this.props.fetchAnimelist();
     }
 
     render() {
@@ -44,7 +47,7 @@ class Main extends Component {
             <div>
                 <Header />
                 <Switch location={this.props.location}>
-                    <Route path='/home' render={() => <Home leaders={this.props.leaders.leaders} />} />
+                    <Route path='/home' render={() => <Home animelist={this.props.animelist.animelist} />} />
                     <Redirect to='./home' />
                 </Switch>
                 <Footer />
