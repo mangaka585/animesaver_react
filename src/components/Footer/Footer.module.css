@@ -1,0 +1,16 @@
+.comfortaa {
+    font-family: "Comfortaa-Regular"; 
+}
+
+.no_decoration:hover {
+    text-decoration: none; 
+}
+
+.footer {
+    background: black; 
+}
+
+.min_size {
+    font-size: 0.8rem; 
+}
+  

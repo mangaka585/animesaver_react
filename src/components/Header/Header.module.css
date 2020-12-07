@@ -1,0 +1,41 @@
+.navbar {
+    background-color: black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.navbar_container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar_brand {
+    font-family: "Comfortaa-Regular";
+    font-size: 1.8rem;
+    font-weight: bold;
+    vertical-align: bottom;
+    padding-bottom: 0;
+    padding-top: 2px;
+}
+
+.navbar_brand img {
+    vertical-align: top !important;
+}
+
+.nav_link {
+    font-size: 1.1rem;
+    color: inherit !important;
+}
+
+
+.nav_item {
+    color: #fdfde9 !important;
+}
+
+.nav_item:hover {
+    color: #91ccf1 !important;
+}
+
+.oswald {
+    font-family: 'Oswald';
+}
