@@ -1,9 +1,10 @@
 import React from 'react';
 import { Row, Container, Col, Card, CardImg, CardTitle, CardBody, CardFooter } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import Loading from '../LoadingComponent';
 import styles from './Home.module.css';
 
-function test(array){
+function arrayWithoutDublicates(array){
     array = array.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif" && anime.link !== "");
     const result = [];
     const map = new Map();
@@ -35,8 +36,8 @@ function test(array){
 };
 
 function AnimeCards({animelist}) {
-    let animelistArray = test(animelist);
-    const animeElement = animelistArray.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif" && anime.link !== "").slice(0,66).map((anime) => {
+    let animelistArray = arrayWithoutDublicates(animelist);
+    const animeElement = animelistArray.slice(0,66).map((anime) => {
         return(
             <Col key={anime.id} xl="4" md="6" xs="12">
                 <Link to={`/anime/${anime.link}`} className={`${styles.no_decoration}`}>
@@ -63,10 +64,31 @@ function AnimeCards({animelist}) {
             </Col>
         )
     })
-    return(
-        <React.Fragment>
-            {animeElement}
-        </React.Fragment>
+    if (animelist.isLoading) {
+        return(
+            <div className="container">
+                <div className="row">            
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    else if (animelist.errMess) {
+        return(
+            <div className="container">
+                <div className="row"> 
+                    <div className="col-12">
+                        <h4>{animelist.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    else 
+        return(
+            <React.Fragment>
+                {animeElement}
+            </React.Fragment>
     )
 }
 
@@ -75,7 +97,7 @@ function Home(props){
     return(
         <Container className={`${styles.container}`}>
             <Row>
-                <AnimeCards animelist={props.animelist}/>
+                <AnimeCards animelist={props.animelist} />
             </Row>
         </Container>
     );

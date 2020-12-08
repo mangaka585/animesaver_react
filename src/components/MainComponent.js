@@ -7,6 +7,7 @@ import Footer from './Footer/FooterComponent';
 import Home from './Home/HomeComponent.js';
 import Disclaimer from './Disclaimer/Disclaimer';
 import Privacypolicy from './Privacypolicy/Privacypolicy';
+import Animepage from './Animepage/Animepage';
 import { postComment, fetchComments, postFeedback, fetchAnimelist } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
@@ -32,11 +33,26 @@ class Main extends Component {
 
     render() {
 
+        const AnimePage = ({match}) => {
+            return(
+                <Animepage 
+                    anime={this.props.animelist.animelist.filter((anime) => anime.link === match.params.animeLink)[0]}
+                    isLoading={this.props.animelist.isLoading}
+                    errMess={this.props.animelist.errMess}
+                    comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
+                    commentsErrMess={this.props.comments.errMess}
+                    postComment={this.props.postComment}
+                    resetFeedbackForm={this.props.resetFeedbackForm}
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
                 <Switch location={this.props.location}>
                     <Route path='/home' render={() => <Home animelist={this.props.animelist.animelist} />} />
+                    <Route path='/anime/:animeLink' render={AnimePage} />
                     <Route path='/disclaimer' render={() => <Disclaimer /> } />
                     <Route path='/privacypolicy' render={() => <Privacypolicy /> } />
                     <Redirect to='./home' />

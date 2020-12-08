@@ -1,0 +1,38 @@
+.container {
+    background-color: #f0ebf4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px #b39bc8;
+    box-sizing: border-box;
+}
+
+.mediarow {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mediaimg {
+    height: 450px;
+    width: 300px;
+}
+
+.heading {
+    font-family: "Comfortaa-Regular";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.mediatext {
+    font-size: 0.9rem;
+}
+
+.seriesblock {
+    border-right: solid 1px black;
+}
+
+.button {
+    min-width: 52px;
+}

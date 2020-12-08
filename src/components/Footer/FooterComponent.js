@@ -20,7 +20,7 @@ function Footer(props) {
                                 <i className="fa fa-vk text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <a href="https://vk.com/weeklysaver" target="_blank" className={`${styles.no_decoration} text-secondary`}>
+                                <a href="https://vk.com/weeklysaver" target="_blank" rel="noreferrer" className={`${styles.no_decoration} text-secondary`}>
                                     VKontakte
                                 </a>
                             </Col>
@@ -30,7 +30,7 @@ function Footer(props) {
                                 <i className="fa fa-instagram fa-lg text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <a href="https://www.instagram.com/animesaver.ru/?hl=en" target="_blank" className={`${styles.no_decoration} text-secondary`}>
+                                <a href="https://www.instagram.com/animesaver.ru/?hl=en" target="_blank" rel="noreferrer" className={`${styles.no_decoration} text-secondary`}>
                                     Instagram
                                 </a>
                             </Col>
@@ -49,7 +49,7 @@ function Footer(props) {
                                 <i className="fa fa-envelope-o text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <a href="mailto:mangaka585@gmail.com" className={`${styles.no_decoration} text-secondary`}>
+                                <a href="mailto:mangaka585@gmail.com" target="_blank" rel="noopener noreferrer" className={`${styles.no_decoration} text-secondary`}>
                                     Напишите нам
                                 </a>
                             </Col>

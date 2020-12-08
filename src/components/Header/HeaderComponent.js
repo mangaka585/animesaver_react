@@ -39,7 +39,7 @@ class Header extends Component {
     render() {
         return(
             <div>
-                <Navbar dark expand="xl" className={styles.navbar}>
+                <Navbar dark expand="xl" className={styles.navbar} fixed="top">
                     <Container className={`${styles.navbar_container}`}>
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className={`mr-20 ${styles.navbar_brand}`}><img src='../img/S-icon.png' height="40" width="40" alt='Animesaver' /> AnimeSaver</NavbarBrand>
