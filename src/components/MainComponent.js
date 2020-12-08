@@ -5,7 +5,8 @@ import { actions } from 'react-redux-form';
 import Header from './Header/HeaderComponent';
 import Footer from './Footer/FooterComponent';
 import Home from './Home/HomeComponent.js';
-import { postComment, fetchComments, fetchLeaders, postFeedback, fetchAnimelist } from '../redux/ActionCreators';
+import Disclaimer from './Disclaimer/Disclaimer';
+import { postComment, fetchComments, postFeedback, fetchAnimelist } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return {
@@ -35,6 +36,7 @@ class Main extends Component {
                 <Header />
                 <Switch location={this.props.location}>
                     <Route path='/home' render={() => <Home animelist={this.props.animelist.animelist} />} />
+                    <Route path='/disclaimer' render={() => <Disclaimer /> } />
                     <Redirect to='./home' />
                 </Switch>
                 <Footer />

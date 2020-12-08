@@ -69,7 +69,7 @@ function Footer(props) {
                                 <i className="fa fa-gavel text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <Link to="#" className={`${styles.no_decoration} text-secondary `}>
+                                <Link to="/disclaimer" className={`${styles.no_decoration} text-secondary `}>
                                     Disclaimer
                                 </Link>
                             </Col>

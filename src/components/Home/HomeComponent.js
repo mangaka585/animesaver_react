@@ -46,7 +46,7 @@ function AnimeCards({animelist}) {
                                 <CardImg src={`${anime.image}`} className={`${styles.card_pic}`} alt={`${anime.title_orig}`} />
                             </Col>
                             <Col xs="8">
-                                <div className={`${styles.card_header} dark pt-1 pb-1 pr-1 ${anime.status === "ongoing" ? "bg-warning" : "bg-primary"} text-white text-right`}>
+                                <div className={`${styles.card_header} dark pt-1 pb-1 pr-1 text-secondary text-right`}>
                                     <i className="fa fa-calendar mr-1" aria-hidden="true"></i>
                                     {anime.updated.substring(8,10) + "." + anime.updated.substring(5,7) + "." + anime.updated.substring(0,4)}
                                 </div>
