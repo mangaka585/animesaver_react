@@ -6,6 +6,7 @@ import Header from './Header/HeaderComponent';
 import Footer from './Footer/FooterComponent';
 import Home from './Home/HomeComponent.js';
 import Disclaimer from './Disclaimer/Disclaimer';
+import Privacypolicy from './Privacypolicy/Privacypolicy';
 import { postComment, fetchComments, postFeedback, fetchAnimelist } from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
@@ -37,6 +38,7 @@ class Main extends Component {
                 <Switch location={this.props.location}>
                     <Route path='/home' render={() => <Home animelist={this.props.animelist.animelist} />} />
                     <Route path='/disclaimer' render={() => <Disclaimer /> } />
+                    <Route path='/privacypolicy' render={() => <Privacypolicy /> } />
                     <Redirect to='./home' />
                 </Switch>
                 <Footer />

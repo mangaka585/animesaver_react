@@ -54,7 +54,7 @@ function AnimeCards({animelist}) {
                                     <CardTitle className={`${styles.card_title}`}>{anime.title}</CardTitle>
                                 </CardBody>
                                 <CardFooter className={`${styles.card_footer} bg-transparent pb-1 pt-2 pl-1 pr-1 text-primary`}><i className="fa fa-list-ul mr-1" aria-hidden="true"></i>
-                                    {`Серии ${anime.last_episode} из ${anime.total_episodes}`}
+                                    {`Серии ${anime.last_episode}`}
                                 </CardFooter>
                             </Col>
                         </Row>

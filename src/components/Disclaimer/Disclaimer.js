@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import styles from './Disclaimer.module.css';
 
-function Footer(props) {
+function Disclaimer(props) {
     return(
-        <Container>
+        <Container className={`${styles.container}`}>
             <Row>
                 <Col xs="12" className={`${styles.title}`}>
                     <h3>Отказ от ответственности</h3>
@@ -28,4 +28,4 @@ function Footer(props) {
     )
 }
 
-export default Footer;
+export default Disclaimer;

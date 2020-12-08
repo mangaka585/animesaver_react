@@ -49,9 +49,9 @@ function Footer(props) {
                                 <i className="fa fa-envelope-o text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <Link to="#" className={`${styles.no_decoration} text-secondary`}>
+                                <a href="mailto:mangaka585@gmail.com" className={`${styles.no_decoration} text-secondary`}>
                                     Напишите нам
-                                </Link>
+                                </a>
                             </Col>
                         </Row>
                         <Row>
@@ -59,7 +59,7 @@ function Footer(props) {
                                 <i className="fa fa-file-powerpoint-o fa-lg text-info" aria-hidden="true"></i>
                             </Col>
                             <Col xs="10">
-                                <Link to="#" className={`${styles.no_decoration} text-secondary `}>
+                                <Link to="/privacypolicy" className={`${styles.no_decoration} text-secondary `}>
                                     Privacy Policy
                                 </Link>
                             </Col>
