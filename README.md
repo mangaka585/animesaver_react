@@ -5,4 +5,4 @@ The domain name is animesaver.ru. The website is about anime, manga and Japanese
 ## Tecnologies
 
 This project was bootstrapped with Create React App. 
-Main tecnology: React-Redux, only Flux archeticture without BLL elements in UI at all.
+Main technology: React-Redux, only Flux architecture without BLL elements in UI at all.
