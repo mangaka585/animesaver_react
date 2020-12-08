@@ -3,8 +3,40 @@ import { Row, Container, Col, Card, CardImg, CardTitle, CardBody, CardFooter } f
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 
+function test(array){
+    array = array.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif" && anime.link !== "");
+    const result = [];
+    const map = new Map();
+    for (const item of array) {
+        if(!map.has(item.link)){
+            map.set(item.link, true);
+            result.push({
+                id: item.id,
+                link: item.link,
+                title: item.title,
+                title_orig: item.title_orig,
+                year: item.year,
+                last_season: item.last_season,
+                last_episode: item.last_episode,
+                total_episodes: item.total_episodes,
+                status: item.status,
+                image: item.image,
+                genre_1: item.genre_1,
+                genre_2: item.genre_2,
+                genre_3: item.genre_3,
+                imdb: item.imdb,
+                description: item.description,
+                updated: item.updated,
+                seasons: item.seasons
+            });
+        }
+    }
+    return result
+};
+
 function AnimeCards({animelist}) {
-    const animeElement = animelist.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif").slice(0,66).map((anime) => {
+    let animelistArray = test(animelist);
+    const animeElement = animelistArray.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif" && anime.link !== "").slice(0,66).map((anime) => {
         return(
             <Col key={anime.id} xl="4" md="6" xs="12">
                 <Link to={`/anime/${anime.link}`} className={`${styles.no_decoration}`}>
