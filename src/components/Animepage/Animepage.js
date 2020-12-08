@@ -23,6 +23,9 @@ function Buttons({series}) {
 }
 
 function Animepage(props){
+    console.log(props);
+    debugger;
+    
     return(
         <Container className={`${styles.container}`}>
             <Row className={`${styles.mediarow} mb-3`}>

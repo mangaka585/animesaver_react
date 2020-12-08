@@ -121,6 +121,38 @@ export const fetchAnimelist = () => (dispatch) => {
 
   dispatch(animelistLoading(true));
 
+  const uniqArr = function arrayWithoutDublicates(array){
+    array = array.filter(anime => anime.image !== "https://st.kp.yandex.net/images/no-poster.gif" && anime.link !== "");
+    const result = [];
+    const map = new Map();
+    for (const item of array) {
+        if(!map.has(item.link)){
+            map.set(item.link, true);
+            result.push({
+                id: item.id,
+                link: item.link,
+                title: item.title,
+                title_orig: item.title_orig,
+                year: item.year,
+                last_season: item.last_season,
+                last_episode: item.last_episode,
+                total_episodes: item.total_episodes,
+                status: item.status,
+                image: item.image,
+                genre_1: item.genre_1,
+                genre_2: item.genre_2,
+                genre_3: item.genre_3,
+                imdb: item.imdb,
+                description: item.description,
+                updated: item.updated,
+                seasons: item.seasons
+            });
+        }
+    }
+    array = result;
+    return array
+  }
+
   return fetch(baseUrl + 'animelist')
   .then(response => {
       if (response.ok) {
@@ -136,6 +168,8 @@ export const fetchAnimelist = () => (dispatch) => {
           throw errmess;
   })
   .then(response => response.json())
+  .then(animelist => uniqArr(animelist))
+  .then(animelist => Object.values(animelist))
   .then(animelist => dispatch(addAnimelist(animelist)))
   .catch(error => dispatch(animelistFailed(error.message)));
 }
