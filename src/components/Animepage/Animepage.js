@@ -12,7 +12,7 @@ function Buttons({series}) {
     let serieaArr = deleteFirstElement(series);
     const serieaElement = serieaArr.map((seria, index) => {
         return(
-            <ButtonToggle outline color="primary" className={`${styles.button} mr-2 mb-2`}>{index + 1}</ButtonToggle>
+            <ButtonToggle key={index + 1} outline color="primary" className={`${styles.button} mr-2 mb-2`}>{index + 1}</ButtonToggle>
         )
     })
     return(           
@@ -23,8 +23,6 @@ function Buttons({series}) {
 }
 
 function Animepage(props){
-    console.log(props);
-    debugger;
     
     return(
         <Container className={`${styles.container}`}>

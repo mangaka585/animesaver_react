@@ -9,6 +9,7 @@ const RegExp6 = /-/g;
 const RegExp7 = /--/g;
 const RegExp8 = /\!/g;
 const RegExp9 = /\?/g;
+const RegExp10 = /\./g;
 
 const Parse = function(file){
 	let animeArray = [];
@@ -67,7 +68,7 @@ const Parse = function(file){
 		    let obj = results[key];
 		    let anime = new Anime(
 		    	obj.id.replace('serial-',''), 
-		    	obj.title_en == undefined ? "" : obj.title_en.replace(RegExp6,'').replace(RegExp1, '-').replace(RegExp2,'').replace(RegExp3,'').replace(RegExp4,'').replace(RegExp5,'').replace(RegExp7,'-').replace(RegExp8,'').replace(RegExp9,''),
+		    	obj.material_data === undefined || obj.material_data.title_en === undefined ? "" : obj.material_data.title_en.replace(RegExp6,'').replace(RegExp1, '-').replace(RegExp2,'').replace(RegExp3,'').replace(RegExp4,'').replace(RegExp5,'').replace(RegExp7,'-').replace(RegExp8,'').replace(RegExp9,'').replace(RegExp10,''),
 		    	obj.title === undefined ? "" : obj.title, 
 		    	obj.title_orig === undefined ? "" : obj.title_orig,
 		    	obj.year === undefined ? "" : obj.year, 

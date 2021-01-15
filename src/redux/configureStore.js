@@ -9,11 +9,11 @@ import { InitialFeedback } from './forms';
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
-            comments: Comments,
+            //comments: Comments,
             animelist: Animelist,
-            ...createForms({
-                feedback: InitialFeedback
-            })
+            // ...createForms({
+            //     feedback: InitialFeedback
+            // })
         }),
         applyMiddleware(thunk, logger)
     );

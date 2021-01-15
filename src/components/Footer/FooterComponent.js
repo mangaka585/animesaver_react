@@ -85,13 +85,13 @@ function Footer(props) {
                         </Row>
                         <Row>
                             <Col xs="12" className="text-sm-right text-center">
-                                <h2><Link className={`${styles.no_decoration} text-white ${styles.comfortaa}`} to="/home"><img src="img/S-icon.png" height="46" width="46" class="align-bottom" alt="icon"/> AnimeSaver</Link></h2>
+                                <h2><Link className={`${styles.no_decoration} align-bottom text-white ${styles.comfortaa}`} to="/home"><img src="img/S-icon.png" height="46" width="46" alt="icon"/> AnimeSaver</Link></h2>
                             </Col>
                         </Row>
                     </Container>
                 </Col>
             </Row>
-            <Row class="pb-3 pt-3">
+            <Row className="pb-3 pt-3">
                 <Col xs="12" className={`text-center text-muted ${styles.min_size} `}>
                     Авторские права и торговые марки на аниме и другие рекламные материалы принадлежат их соответствующим владельцам, и их использование разрешено
                     в соответствии с положениями о добросовестном использовании Закона об авторском праве.

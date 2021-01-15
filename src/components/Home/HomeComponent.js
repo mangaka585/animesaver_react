@@ -61,7 +61,7 @@ function AnimeCards({animelist}) {
 }
 
 function Home(props){
-    console.log(props.animelist);
+    //console.log(props.animelist);
     return(
         <Container className={`${styles.container}`}>
             <Row>
