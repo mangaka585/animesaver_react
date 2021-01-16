@@ -3,6 +3,8 @@ import { Col, Container, Row } from 'reactstrap';
 import styles from './Privacypolicy.module.css';
 
 function Privacypolicy(props) {
+    document.title = "Privacy Policy";
+
     return(
         <Container className={`${styles.container}`}>
             <Row>

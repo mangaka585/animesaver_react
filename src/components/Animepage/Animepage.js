@@ -39,6 +39,8 @@ class Animepage extends React.Component {
                 episodeNumber.innerHTML = "Серия " + button.dataset.episodenumber;
             })
         }
+
+        document.title = this.props.anime.title;
     }
 
     render() {

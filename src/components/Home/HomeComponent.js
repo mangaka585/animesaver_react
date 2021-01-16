@@ -5,6 +5,9 @@ import Loading from '../LoadingComponent';
 import styles from './Home.module.css';
 
 function AnimeCards({animelist}) {
+
+    document.title = "Animesaver";
+    
     const animeElement = animelist.slice(0,66).map((anime) => {
         return(
             <Col key={anime.id} xl="4" md="6" xs="12">

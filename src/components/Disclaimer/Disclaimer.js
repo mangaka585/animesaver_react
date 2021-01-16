@@ -3,6 +3,8 @@ import { Col, Container, Row } from 'reactstrap';
 import styles from './Disclaimer.module.css';
 
 function Disclaimer(props) {
+    document.title = "Disclaimer";
+
     return(
         <Container className={`${styles.container}`}>
             <Row>
