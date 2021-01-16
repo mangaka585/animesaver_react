@@ -1,15 +1,7 @@
 global.fetch = require("node-fetch");
 var fs = require('fs');
-const RegExp1 = /\s/g;
-const RegExp2 = /\'/g;
-const RegExp3 = /\:/g;
-const RegExp4 = /\(/g;
-const RegExp5 = /\)/g;
-const RegExp6 = /-/g;
-const RegExp7 = /--/g;
-const RegExp8 = /\!/g;
-const RegExp9 = /\?/g;
-const RegExp10 = /\./g;
+const RegExp1 = /[.,\/#!?∞$%\^&\*;:{}=\-_`~()]/g;
+const RegExp2 = /\s/g;
 
 const Parse = function(file){
 	let animeArray = [];
@@ -68,7 +60,7 @@ const Parse = function(file){
 		    let obj = results[key];
 		    let anime = new Anime(
 		    	obj.id.replace('serial-',''), 
-		    	obj.material_data === undefined || obj.material_data.title_en === undefined ? "" : obj.material_data.title_en.replace(RegExp6,'').replace(RegExp1, '-').replace(RegExp2,'').replace(RegExp3,'').replace(RegExp4,'').replace(RegExp5,'').replace(RegExp7,'-').replace(RegExp8,'').replace(RegExp9,'').replace(RegExp10,''),
+		    	obj.material_data === undefined || obj.material_data.title_en === undefined ? "" : obj.material_data.title_en.replace(RegExp1,'').replace(RegExp2,'-').toLowerCase(),
 		    	obj.title === undefined ? "" : obj.title, 
 		    	obj.title_orig === undefined ? "" : obj.title_orig,
 		    	obj.year === undefined ? "" : obj.year, 
